@@ -17,19 +17,10 @@ $$
 
 Instead of implement it as a recursive functions we can rewrite the rule as
 
-$$\begin{pmatrix}
-F_n \\
-F_{n-1}
-\end{pmatrix}
-=
-\begin{pmatrix}
-1 & 1 \\
-1 & 0
-\end{pmatrix}
-\begin{pmatrix}
-F_{n-1} \\
-F_{n-2}
-\end{pmatrix}$$
+$$\begin{pmatrix} F_n \\
+F_{n-1} \end{pmatrix} = \begin{pmatrix} 1 & 1 \\
+1 & 0 \end{pmatrix} \begin{pmatrix} F_{n-1} \\
+F_{n-2} \end{pmatrix}$$
 
 In that case we store the state of the sequece in a tuple with the last two elements.
 
