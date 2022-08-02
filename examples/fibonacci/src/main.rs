@@ -11,13 +11,17 @@ impl Iterator for Fib {
 }
 
 impl Fib {
+  fn new() -> Fib {
+    Fib { x: (1, 0) }
+  }
+
   fn take_first(n: usize) -> Vec<usize> {
-    let fib = Fib {x: (1,0)};
-    fib.take(n).collect()
+    Fib::new().take(n).collect()
   }
 }
 
 fn main () {
-    println!("{:?}", Fib::take_first(10));
+  let n: usize = std::env::args().nth(1).unwrap().parse().unwrap();
+  println!("{:?}", Fib::take_first(n));
 }
   
